@@ -1,0 +1,95 @@
+<html>
+
+    <head>
+    
+        <title>Javascript</title>
+        
+        <style>
+            
+            #resetall {
+                
+                float: left;
+                margin-top: 100px;
+                margin-left: 20px;
+            }
+            
+            #redcircle {
+                
+                background-color: red;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                float: left;
+                margin: 20px;
+                text-align: center;
+                line-height: 200px;
+            }
+            
+            #bluecircle {
+                
+                background-color: blue;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                float: left;
+                margin: 20px;
+                text-align: center;
+                line-height: 200px;
+            }
+            
+            
+            #greencircle {
+                
+                background-color: green;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                float: left;
+                margin: 20px;
+                text-align: center;
+                line-height: 200px;
+            }
+       
+        </style>
+    </head>
+    
+    <body>
+    
+        <div id="redcircle">Click Me!</div>
+        <div id="bluecircle">Click Me!</div>
+        <div id="greencircle">Click Me!</div>
+        
+        <button id="resetall">Reset All!</button>
+        
+        <script type="text/javascript">
+            
+            
+            document.getElementById("redcircle").onclick = function () {
+                
+                document.getElementById("redcircle").style.display = "none"
+                
+            }
+            
+            document.getElementById("bluecircle").onclick = function () {
+                
+                document.getElementById("bluecircle").style.display = "none"
+                
+            }
+            
+            document.getElementById("greencircle").onclick = function () {
+                
+                document.getElementById("greencircle").style.display = "none"
+                
+            }
+            
+            document.getElementById("resetall").onclick = function () {
+                
+                document.getElementById("redcircle").style.display = "block"
+                document.getElementById("bluecircle").style.display = "block"
+                document.getElementById("greencircle").style.display = "block"
+            }
+        
+        </script>
+      
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html>
+<head>
+    
+    <title>Reaction Timer</title>
+
+    <style>
+    
+        body {
+            
+            font-family: sans-serif;
+        }
+        
+        #yourtime {
+            
+            font-weight: bold;
+        }
+        
+        #randomshape {
+            
+            border-radius: 200px;
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            display: none;
+			position: absolute;
+        }
+		
+		#background {
+			width: 900px; 
+			height: 750px;
+			background-color: black;
+			position: relative;
+		}
+    
+    
+    </style>
+    
+
+</head>
+
+<body>
+
+    <h1>Test Your Reactions!</h1>
+    
+    <p>Click on the boxes and circles as quickly as you can!</p>
+    
+    <p id="yourtime">Your time:<span></span></p>
+    <div id="background">
+    	<div id="randomshape"></div>
+    </div>
+    <script>
+            var time="";
+            var start = new Date().getTime();
+        
+                function getRandomColor() {
+                    var letters = '0123456789ABCDEF' .split('');
+                    var color = '#';
+                            for (var i = 0; i < 6; i++ ) {
+                                color += letters[Math.floor(Math.random() * 16)];
+                            }
+                return color;
+                }
+                    
+                function getRandomMargin() {
+                    var margin="";
+                    margin = Math.floor(Math.random() * 400);
+                    return margin;
+                }
+        
+                function getRandomMarginTop() {
+                    var margin="";
+                    margin = Math.floor(Math.random() * 300);
+                    var start = new Date().getTime();
+                    return margin;
+                } 
+        
+                function randomTime() {
+                    
+                    var x ="";
+                    x = Math.floor(Math.random() * 2000);
+                    return x;
+                    
+                }
+                
+        
+            time=randomTime();
+        
+                function makeAppear() {
+                    
+                    var size ="";
+                    
+                    function getRandomSize() {
+                        size = Math.floor((Math.random() * 300) + 100);
+                        return size;
+                    }
+                    
+                    size = getRandomSize();
+                    
+                    document.getElementById("randomshape").style.backgroundColor = getRandomColor();
+
+                    document.getElementById("randomshape").style.marginLeft = getRandomMargin() + "px";
+
+                    document.getElementById("randomshape").style.marginTop = getRandomMarginTop() + "px";
+
+                    document.getElementById("randomshape").style.display = "block";
+                    start = new Date().getTime();
+                    
+                    document.getElementById("randomshape").style.height = size + "px";
+                    
+                    document.getElementById("randomshape").style.width = size + "px";
+                    
+                    var x = "";
+                    
+                    x = Math.round(Math.random());
+                    
+                    if(x==1) {
+                        
+                    document.getElementById("randomshape").style.borderRadius = "0px";
+                        
+                    }else{
+                        
+                    document.getElementById("randomshape").style.borderRadius = size + "px";
+                    
+                    }
+                    start = new Date().getTime();
+         
+                }
+        
+            
+                function appearAfterDelay(){
+                    
+                    setTimeout (makeAppear, time);
+                    
+                }
+        
+        appearAfterDelay();
+        
+                document.getElementById("randomshape").onclick = function changeShape() {
+                    var end = new Date().getTime(); 
+                   
+                    var reactionTime = (end - start)/1000;
+                    
+                    document.getElementById("yourtime").innerHTML = "Your time: " + reactionTime + "s";
+                    
+                   appearAfterDelay();
+                    
+                    start = new Date().getTime();
+                }
+        
+        
+    </script>
+
+
+</body>
+    
+</html>

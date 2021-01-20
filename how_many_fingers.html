@@ -1,0 +1,39 @@
+<head>
+    <style type="text/css">
+        #userGuess{
+            display: block;
+            font: 1rem 'Fira Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>Guess how many fingers I'm holding behind my back!</p>
+    
+    <p> What's your guess? (0-5) <input type="text" id="userguess"></p>
+    
+    <p> <button onclick="checkValue()">Submit</button> </p>
+    
+    <script type="text/javascript">
+        
+        function checkValue () {
+            
+            var fingers = Math.floor (Math.random () * 6);
+    
+            var numberGuessed = "";
+            
+            numberGuessed = document.getElementById("userguess").value;
+            
+            if (numberGuessed == fingers) {
+                
+                alert ("You guessed right!");
+        }else {
+            
+            alert ("Wrong! Try again. The number was: " + fingers);
+        }
+    }
+    </script>
+
+
+</body>
