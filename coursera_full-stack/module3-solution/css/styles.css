@@ -1,0 +1,40 @@
+#nav-list {
+    text-align: center;
+    background-color: rgb(72, 72, 72);
+    color: #000000;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #ffff;
+}
+
+#nav-list a:hover {
+    background: #000000;
+    color: #ffff;
+}
+
+#page-title {
+    padding-bottom: 50px;
+}
+
+.navbar-brand {
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-default .navbar-brand{
+    color: #000000;
+}
+
+.menu-item {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.menu-item p {
+    padding: 5px;
+}
